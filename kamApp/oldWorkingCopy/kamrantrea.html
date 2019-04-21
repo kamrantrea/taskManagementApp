@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test02</title>
+    <!-- 	meta tags		-->
+    <meta name="author" content="Kam" />
+    <meta name="description" content="CWMD2601 - JavaScript - Samples" />
+    <meta name="keywords" content="Durham, JavaScript, CWMD2601, samples" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--	external stylesheets	-->
+    <link rel="stylesheet" type="text/css" href="./css/kamrantrea.css" />
+</head>
+
+<body>
+    <fieldset class="wrapper">
+        <legend>TASK ENTRY</legend>
+        <div>
+            <label>Enter a task for today's list: </label>
+            <input type="text" class="inputs" id="taskDesc" placeholder="Task description"><br>
+            <input type="text" class="inputs" id="taskID" placeholder="Task ID"><br>
+            
+            <label for="priorityDropDown">Priority: </label>
+            <select class="dropDownList" id="priorityDropDown" size = "1">
+                <option selected = "selected">1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <div class="addOpts">
+                <label for="taskTypeDropDown">Task Type: </label>
+                <select class='dropDownList' id="taskTypeDropDown" size = "1">
+                    <option selected = "selected">Task</option>
+                    <option>Appt</option>
+                    <option>Shopping</option>
+                </select>
+            </div>
+            <br>
+            <div id='apptOpts'>
+                <input type="date" class="inputs" id="apptDate" placeholder="Date"><br>
+                <input type="time" class="inputs" id="apptTime" placeholder="Time"><br>
+                <input type="text" class="inputs" id="apptPlace" placeholder="Place"><br>
+            </div>           
+            <div id='shoppingOpts'>
+                <input type="text" class="inputs" id="shoppingItems" placeholder="Items"><br>
+                <input type="text" class="inputs" id="shoppingNotes" placeholder="Notes"><br>
+            </div>           
+        </div>
+        <div>
+          
+          <div id="addBtns">
+            <button id="addBtn">Click to add task list</button><br>
+          </div>
+
+          <div id="editBtns">
+            <div>
+                <label for="completeBtn">Mark Complete</label>
+                <input id="completeBtn" type='checkbox' name='completed'><br>
+            </div>
+            <button id="updateBtn">Update</button><br>
+            <button id="deleteBtn">Delete</button><br>
+            <button id="cancelBtn">Cancel</button><br>
+          </div>
+        </div>
+    </fieldset>
+
+    <fieldset class id="showResult">
+        <legend>TO DO LIST</legend>
+        <div id ="output"></div>
+        <div>
+            <ul id='taskList'>
+
+            </ul>
+        </div>
+    </fieldset>
+
+    <!--  external javascript  -->
+    <script src="./js/kamrantrea.js"></script>
+</body>
+
+</html>

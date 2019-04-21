@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" >
+   <head>
+      <meta charset="UTF-8">
+      <title>To do list app</title>
+      <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,300,700'>
+      <link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+      <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
+       <!--    external stylesheets    -->
+   <link rel="stylesheet" type="text/css" href="./css/kamrantrea.css" />
+   </head>
+   <body>
+      <div class="mobile-wrap">
+      <div class="mobile clearfix">
+      <div class="header">
+         <span class="ion-ios-navicon pull-left"><i></i></span>
+         <span class="title">Home</span>
+         <span class="ion-ios-search pull-right"></span>
+         <div class="search">
+            <form method="post">
+               <input type="search" placeholder="Search Here">
+            </form>
+         </div>
+      </div>
+      <div class="sidebar">
+         <div class="sidebar-overlay"></div>
+         <div class="sidebar-content">
+            <div class="top-head">
+               <div class="name">The Kam App</div>
+               <div class="email">kamran.trea@dcmail.ca</div>
+            </div>
+            <div class="nav-left">
+               <a href="#home"><span class="ion-ios-home-outline"></span> Home</a>
+               <a href="#tasks" id="TaskListNav"><span class="ion-ios-list"></span>Tasks List</a>
+               <a href="#appt" id="ApptNav"><span class="ion-calendar"></span>Appointment</a>
+               <a href="#task" id="TaskNav"><span class="ion-clipboard"></span>Task</a>
+               <a href="#shopping" id="ShoppingNav"><span class="ion-bag"></span>Shopping</a>
+            </div>
+         </div>
+      </div>
+      <div class="content">
+         <div class="html search">
+            <div class="title bounceInDown animated">Search Result</div>
+            <p class="flipInX animated">Opps Sorry buddy! The Kam App,<br>Found no matches for <b class="key"></b></p>
+         </div>
+         <div class="html welcome visible">
+            <div class="datetime">
+               <div class="day lightSpeedIn animated">Thursday</div>
+               <div class="date lightSpeedIn animated">June 18, 2015</div>
+               <div class="time lightSpeedIn animated">08:00 AM</div>
+            </div>
+         </div>
+         <div class="AddModule compose html appt" id='ApptAdd'>
+            <div>
+               <div class="forms">
+                  <div class="group clearfix slideInLeft animated">
+                     <label for="priorityDropDownAppt">Priority: </label>
+                     <select class="dropDownList" id="priorityDropDownAppt" size = "1">
+                        <option value="1" selected = "selected">Must Do</option>
+                        <option value='2' >Should Do</option>
+                        <option value="3">Nice to Do</option>
+                     </select>
+                     <br>
+                     <label class="pull-left" for="compose-time"><span class="ion-ios-time-outline"></span> Time</label>
+                     <input class="pull-right taskValue" id="apptTime" type="time">
+                  </div>
+                  <div class="group clearfix slideInLeft animated">
+                     <label class="pull-left" for="compose-date"><span class="ion-ios-calendar-outline"></span> Date</label>
+                     <input class="pull-right taskValue" id="apptDate" type="date">
+                  </div>
+                  <div class="group clearfix slideInRight animated">
+                     <label class="pull-left" for="compose-title"><span class="ion-ios-location-outline"></span>Place</label>
+                     <input class="pull-right taskValue" id="apptPlace" type="text">
+                  </div>
+                  <div class="group clearfix slideInLeft animated">
+                     <label class="visible" for="compose-detail"><span class="ion-ios-list-outline"></span> Description</label>
+                     <textarea class="visible taskValue" id="ApptDesc" rows="3"></textarea>
+                  </div>
+               </div>
+               <div>
+                  <div class="editBtns">
+                     <div>
+                        <label for="completeBtnAppt">Mark Complete</label>
+                        <input id="completeBtnAppt" type='checkbox' name='completed'><br>
+                     </div>
+                     <button class="btn btn-crud" id="updateBtnAppt">Update</button>
+                     <button class="btn btn-crud" id="deleteBtnAppt">Delete</button>
+                     <button class="btn btn-crud" id="cancelBtnAppt">Cancel</button>
+                  </div>
+               </div>
+            </div>
+            <div class="action flipInY animated">
+               <div id="addBtns">
+                  <button class="btn-add btn" id="addBtnAppt">Click to add to appointment</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="AddModule compose html task" id="TaskAdd">
+         <div>
+            <div class="forms">
+               <div class="group clearfix slideInLeft animated">
+                  <label class="visible" for="compose-detail"><span class="ion-ios-list-outline"></span> Description</label>
+                  <textarea id="TaskDesc" class="visible taskValue" rows='3'></textarea>
+                  <br>
+                  <label for="priorityDropDownTask">Priority: </label>
+                  <select class="dropDownList" id="priorityDropDownTask" size = "1">
+                    <option value="1" selected = "selected">Must Do</option>
+                    <option value='2' >Should Do</option>
+                    <option value="3">Nice to Do</option>
+                  </select>
+                  <br>
+               </div>
+               <div>
+                  <div class="editBtns">
+                     <div>
+                        <label for="completeBtnTask">Mark Complete</label>
+                        <input id="completeBtnTask" type='checkbox' name='completed'><br>
+                     </div>
+                     <button class="btn btn-crud" id="updateBtnTask">Update</button>
+                     <button class="btn btn-crud" id="deleteBtnTask">Delete</button>
+                     <button class="btn btn-crud" id="cancelBtnTask">Cancel</button>
+                  </div>
+               </div>
+            </div>
+            <div class="action flipInY animated">
+               <div id="addBtns">
+                  <button class="btn-add btn" id="addBtnTask">Click to add task list</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="AddModule compose html shopping" id="ShoppingAdd">
+         <div class="forms">
+            <label for="priorityDropDownShopping">Priority: </label>
+            <select class="dropDownList" id="priorityDropDownShopping" size = "1">
+                <option value="1" selected = "selected">Must Do</option>
+                <option value='2' >Should Do</option>
+                <option value="3">Nice to Do</option>
+            </select>
+            <div class="group clearfix slideInRight animated">
+               <label class="pull-left" for="compose-title"><span class="ion-ios-location-outline"></span>Notes</label>
+               <input class="pull-right taskValue" id="shoppingNotes" type="text">
+            </div>
+            <div class="group clearfix slideInRight animated">
+               <label class="pull-left" for="compose-title"><span class="ion-ios-location-outline"></span>Items</label>
+               <input class="pull-right taskValue" id="shoppingItems" type="text">
+            </div>
+            <div class="group clearfix slideInLeft animated">
+               <label class="visible" for="compose-detail"><span class="ion-ios-list-outline"></span> Description</label>
+               <textarea class="visible taskValue" id="ShoppingDesc" rows="3"></textarea>
+            </div>
+            <div class="editBtns">
+               <div>
+                  <label for="completeBtnShopping">Mark Complete</label>
+                  <input id="completeBtnShopping" type='checkbox' name='completed'><br>
+               </div>
+               <button class="btn btn-crud" id="updateBtnShopping">Update</button>
+               <button class="btn btn-crud" id="deleteBtnShopping">Delete</button>
+               <button class="btn btn-crud" id="cancelBtnShopping">Cancel</button>
+            </div>
+         </div>
+         <div class="action flipInY animated">
+            <button class="btn-add btn" id="addBtnShopping">Add Shopping list</button>
+         </div>
+      </div>
+      <div class="AddModule compose html tasks" id="TaskList">
+         <div id ="output"></div>
+         <div>
+            <label for="sortDropDown">Sort by: </label>
+            <select class="dropDownList" id="sortDropDown" size = "1">
+               <option value="priority" selected = "selected">Priority</option>
+               <option value="entryDate" >Date</option>
+            </select>
+            <p>Click on a task to modify</p>
+            <ul id='taskList'>
+               
+               Empty
+            </ul>
+         </div>
+      </div>
+      <div class="nav">
+        <a href="#tasks" class="nav-item nav-count-1"><i class="ion-ios-list"></i><span class="invisible">Tasks</span></a>
+        <a href="#appt" class="nav-item nav-count-2"><i class="ion-calendar"></i><span class="invisible">Appointments</span></a>
+        <a href="#task" class="nav-item nav-count-3"><i class="ion-clipboard"></i><span class="invisible">Task</span></a>
+        <a href="#shopping" class="nav-item nav-count-4"><i class="ion-bag"></i><span class="invisible">Shopping</span></a>
+        <a href="#toggle" class="mask"><i class="ion-ios-plus-empty"></i></a>
+      </div>
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+   </body>
+  
+   <!--  external javascript  -->
+   <script src="./js/kamrantrea.js"></script>
+   <script src="./js/ui.js"></script>
+</html>
